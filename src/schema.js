@@ -50,11 +50,11 @@ const schema = gql`
     deleteBook(id: ID!): Book!
   }
 
-  type Subscription {
-    count: Int!
-    author: AuthorSubscriptionPayload!
-    book(authorId: ID!): BookSubscriptionPayload!
-  }
+  #type Subscription {
+  #  count: Int!
+  #  author: AuthorSubscriptionPayload!
+  #  book(authorId: ID!): BookSubscriptionPayload!
+  #}
 
   enum MutationType {
     CREATED
