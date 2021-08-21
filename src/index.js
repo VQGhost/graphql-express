@@ -29,5 +29,7 @@ server.listen(app.get("port"), () => {
       path: "/subscriptions",
     }
   );
-  console.log(`App On port %s`, app.get("port"));
+  console.log(
+    `Running a GraphQL API server at localhost:${app.get("port")}/graphql`
+  );
 });

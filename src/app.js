@@ -31,20 +31,6 @@ const rootValue = {
 
 app.use("/playground", expressPlayground({ endpoint: "/graphql" }));
 
-app.get("/", async (req, res) => {
-  const data = await prisma.users.findFirst({
-    where: {
-      email: "vic123@gmail.com	",
-    },
-  });
-  console.log(data);
-  res.status(200).json({
-    success: false,
-    path: req.body,
-    message: "Page no found",
-  });
-});
-
 app.use(
   "/graphql",
   graphqlHTTP((req) => {
@@ -62,5 +48,4 @@ app.use(
 );
 
 const port = process.env.PORT || 4000;
-console.log(`Running a GraphQL API server at localhost:${port}/graphql`);
 export default app;
