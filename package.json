@@ -29,7 +29,11 @@
     "rimraf": "^3.0.2"
   },
   "scripts": {
-    "dev": "nodemon src --exec babel-node"
+    "dev": "nodemon src --exec babel-node",
+    "clean": "rimraf dist",
+    "build": "npm-run-all clean transpile",
+    "transpile": "babel ./src --out-dir dist --copy-files",
+    "prod": "npm-run-all build"
   },
   "keywords": [],
   "author": "",
